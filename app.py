@@ -3,6 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
+from dash.dependencies import Input, Output, State
 
 ########### Define your variables ######
 
@@ -21,6 +22,14 @@ myheading1 = f"Wow! That's a lot of {mycolumn}!"
 
 import pandas as pd
 df = pd.read_csv('assets/usa-2011-agriculture.csv')
+
+
+
+########### Initiate the app
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = app.server
+app.title=tabtitle
 
 @app.callback(Output('figure-1', 'figure'),
              [Input('options-drop', 'value')])
@@ -47,12 +56,6 @@ def create_graph(col):
     )
     
     return fig
-
-########### Initiate the app
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = app.server
-app.title=tabtitle
 
 ########### Set up the layout
 
