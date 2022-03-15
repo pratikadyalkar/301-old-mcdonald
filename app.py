@@ -18,8 +18,9 @@ sourceurl = 'https://plot.ly/python/choropleth-maps/'
 githublink = 'https://github.com/pratikadyalkar/301-old-mcdonald'
 myheading1 = f"Wow! That's a lot of {mycolumn}!"
 colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
+    'background': '#999999',
+    'text': '#7FDBFF',
+    'top': '#454545'
 }
 
 ########## Set up the chart
@@ -53,7 +54,7 @@ def create_graph(col):
     ))
 
     fig.update_layout(
-        title_text = mygraphtitle,
+        title_text = myheading1,
         geo_scope='usa',
         width=1200,
         height=800
@@ -78,9 +79,9 @@ app.layout = html.Div(children=[
                     options=[{'label': i, 'value': i} for i in list_of_columns],
                     value='corn'
                 ),
-        ], className='two columns'),
+        ], className='twelve columns'),
         html.Div([dcc.Graph(id='figure-1'),
-            ], className='ten columns'),
+            ], className='twelve columns'),
     ], className='twelve columns'),
     html.A('Code on Github', href=githublink),
     html.Br(),
