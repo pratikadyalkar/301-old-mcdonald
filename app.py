@@ -17,6 +17,10 @@ tabtitle = 'Old McDonald'
 sourceurl = 'https://plot.ly/python/choropleth-maps/'
 githublink = 'https://github.com/pratikadyalkar/301-old-mcdonald'
 myheading1 = f"Wow! That's a lot of {mycolumn}!"
+colors = {
+    'background': '#111111',
+    'text': '#7FDBFF'
+}
 
 ########## Set up the chart
 
@@ -37,7 +41,7 @@ def create_graph(col):
     
     myheading1 = f"Wow! That's a lot of {col}!"
     mygraphtitle = '2011 US Agriculture Exports by State'
-    mycolorscale = 'ylorrd' # Note: The error message will list possible color scales.
+    mycolorscale = 'Reds' # Note: The error message will list possible color scales.
     mycolorbartitle = "Millions USD"
     
     fig = go.Figure(data=go.Choropleth(
@@ -60,7 +64,12 @@ def create_graph(col):
 ########### Set up the layout
 
 app.layout = html.Div(children=[
-    html.H1('2011 Agricultural Exports, by State'),
+    html.H1(
+        children = '2011 Agricultural Exports, by State',
+        style={
+            'textAlign': 'center',
+            'color': colors['text']
+        }),
     html.Div([
         html.Div([
                 html.H6('Select a variable for analysis:'),
@@ -76,7 +85,11 @@ app.layout = html.Div(children=[
     html.A('Code on Github', href=githublink),
     html.Br(),
     html.A("Data Source", href=sourceurl),
-    ]
+    ],
+                      style={
+            
+            'color': colors['background']
+        }
 )
 ############ Deploy
 if __name__ == '__main__':
