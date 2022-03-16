@@ -86,13 +86,11 @@ app.layout = html.Div(children=[
             ], className='twelve columns'),
     ], className='twelve columns'),
     html.A('Code on Github', href=githublink),
-    html.Br(),
-    html.A("Data Source", href=sourceurl),
-    ],
-                      style={
-            
-            'background': colors['background']
-        }
+    html.A("Data Source", href=sourceurl,
+          style={
+              'right': 0
+          }),
+    ],className='blockquote'
 )
 ############ Deploy
 if __name__ == '__main__':
