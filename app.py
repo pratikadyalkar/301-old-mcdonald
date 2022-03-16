@@ -86,7 +86,7 @@ app.layout = html.Div(children=[
             ], className='twelve columns'),
     ], className='twelve columns'),
     html.A('Code on Github', href=githublink),
-    html.br(),
+    html.Br(),
     html.A("Data Source", href=sourceurl),
     ],className='blockquote'
 )
