@@ -8,7 +8,7 @@ from dash.dependencies import Input, Output, State
 ########### Define your variables ######
 
 # here's the list of possible columns to choose from.
-list_of_columns =['code', 'state', 'category', 'total exports', 'beef', 'pork', 'poultry',
+list_of_columns =['total exports', 'beef', 'pork', 'poultry',
        'dairy', 'fruits fresh', 'fruits proc', 'total fruits', 'veggies fresh',
        'veggies proc', 'total veggies', 'corn', 'wheat', 'cotton']
 
@@ -69,7 +69,9 @@ app.layout = html.Div(children=[
         children = '2011 Agricultural Exports, by State',
         style={
             'textAlign': 'center',
-            'color': colors['text']
+            'color': colors['text'],
+            'background': colors['top']
+            
         }),
     html.Div([
         html.Div([
@@ -89,7 +91,7 @@ app.layout = html.Div(children=[
     ],
                       style={
             
-            'color': colors['background']
+            'background': colors['background']
         }
 )
 ############ Deploy
